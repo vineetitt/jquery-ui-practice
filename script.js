@@ -36,12 +36,14 @@ $(document).ready(function () {
     const name = $("#name").val();
     const email = $("#email").val();
     const age = $("#age").val();
+    const password = $("#password").val();
 
     const newRow = `
       <tr>
         <td>${name}</td>
         <td>${email}</td>
         <td>${age}</td>
+        <td>${password}</td>
       </tr>
     `;
 
