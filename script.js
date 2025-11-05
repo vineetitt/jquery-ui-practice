@@ -19,11 +19,6 @@ $(document).ready(function() {
   $("#recordForm").submit(function(event) {
     event.preventDefault();
 
-    
-    // if (!$(this).validationEngine('validate')) {
-    //   return;
-    // }
-
     const name = $("#name").val();
     const email = $("#email").val();
     const age = $("#age").val();
