@@ -20,6 +20,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/languages/jquery.validationEngine-en.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery.validationEngine.min.js"></script>
 
+    <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+
+
+
     <script src="script.js"></script>
   </head>
   <body>
@@ -34,6 +38,7 @@
           <th>Email</th>
           <th>Age</th>
           <th>Password</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -57,6 +62,10 @@
 
         <label>password:</label><br />
         <input type="password" id="password" required class="validate[required, custom[passwordCheck], minSize[6]]" /><br /><br />
+
+        <label>Description:</label><br />
+        <textarea id="description" name="description"></textarea><br /><br />
+
 
         <button type="submit">Save</button>
       </form>

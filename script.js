@@ -11,6 +11,8 @@ $(document).ready(function () {
     source: emailSuggestions
   });
     }, 500);
+
+    CKEDITOR.replace("description");
   jQuery.validationEngineLanguage.allRules["passwordCheck"] = {
     regex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).+$/,
     alertText:
@@ -33,10 +35,13 @@ $(document).ready(function () {
   $("#recordForm").submit(function (event) {
     event.preventDefault();
 
+    CKEDITOR.instances.description.updateElement();
+
     const name = $("#name").val();
     const email = $("#email").val();
     const age = $("#age").val();
     const password = $("#password").val();
+    const description = $("#description").val();
 
     const newRow = `
       <tr>
@@ -44,6 +49,7 @@ $(document).ready(function () {
         <td>${email}</td>
         <td>${age}</td>
         <td>${password}</td>
+        <td>${description}</td>
       </tr>
     `;
 
