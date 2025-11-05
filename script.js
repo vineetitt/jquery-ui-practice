@@ -1,22 +1,36 @@
-$(document).ready(function() {
-    jQuery.validationEngineLanguage.allRules['passwordCheck'] = {
-  "regex": /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).+$/,
-  "alertText": "Password me kam se kam ek uppercase, ek lowercase, aur ek special character hona chahiye"
-    };
+
+$(document).ready(function () {
+  const nameSuggestions = ["Vineet", "Arun", "Vishal", "David", "Rahul"];
+  const emailSuggestions = ["vineet@gmail.com", "arun@gmail.com", "vishal2@gmail.com", "david32@outlook.com", "Rahul12@gmail.com"];
+  setTimeout(function() {
+  $("#name").autocomplete({
+    source: nameSuggestions
+  });
+
+  $("#email").autocomplete({
+    source: emailSuggestions
+  });
+    }, 500);
+  jQuery.validationEngineLanguage.allRules["passwordCheck"] = {
+    regex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).+$/,
+    alertText:
+      "Password me kam se kam ek uppercase, ek lowercase, aur ek special character hona chahiye",
+  };
+    
 
   $("#formDialog").dialog({
     autoOpen: false,
     modal: true,
-    width: 400
+    width: 400,
   });
 
-  $("#addRecordBtn").click(function() {
+  $("#addRecordBtn").click(function () {
     $("#formDialog").dialog("open");
   });
 
   $("#recordForm").validationEngine();
 
-  $("#recordForm").submit(function(event) {
+  $("#recordForm").submit(function (event) {
     event.preventDefault();
 
     const name = $("#name").val();
@@ -37,5 +51,7 @@ $(document).ready(function() {
     $("#formDialog").dialog("close");
   });
 });
+
+
 
 
